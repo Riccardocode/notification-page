@@ -33,10 +33,10 @@
           <div class="notifications">Notifications</div>
           <div class="notifications notification-number">3</div>
         </div>
-        <div class="mark-as-read">Mark all as read</div>
+        <div id="markreadnotification" class="mark-as-read">Mark all as read</div>
       </div>
       <!-- user1 Mark Webber-->
-      <div class="profile-section">
+      <div id="user1" class="profile-section">
         <img
           class="profile-img"
           src="./assets/images/avatar-mark-webber.webp"
@@ -53,7 +53,7 @@
         </div>
       </div>
       <!-- user2 Angela Gray-->
-      <div class="profile-section">
+      <div id="user2" class="profile-section">
         <img
           class="profile-img"
           src="./assets/images/avatar-angela-gray.webp"
@@ -70,7 +70,7 @@
       </div>
 
       <!-- user3 Jacob Thompson-->
-      <div class="profile-section">
+      <div id="user3" class="profile-section">
         <img
           class="profile-img"
           src="./assets/images/avatar-jacob-thompson.webp"
@@ -112,7 +112,7 @@
       
       
        <!-- user5 Kimberly Smith-->
-      <div class="profile-section read">
+      <div  class="profile-section read">
         <img
           class="profile-img"
           src="./assets/images/avatar-kimberly-smith.webp"
@@ -172,5 +172,22 @@
         >Frontend Mentor</a
       >. Coded by <a href="#">Riccardo</a>.
     </div>
+
+    <script>
+      const markRead = document.getElementById('markreadnotification');
+      const user1 = document.getElementById('user1');
+      const user2 = document.getElementById('user2');
+      const user3 = document.getElementById('user3');
+      const dots = document.getElementsByClassName('dot');
+
+      markRead.addEventListener('click', function() {
+      user1.classList.add('read');
+      user2.classList.add('read');
+      user3.classList.add('read');
+      for(let i=0;i<dots.length;i++){
+        dots[i].style.visibility="hidden";
+      }
+});
+    </script>
   </body>
 </html>
